@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Button Example</title>
+    <style>
+      .hoverable:hover{
+        color:darkblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Click the Button!</h1>
+
+    <button onclick="sayHello()">Say Hello</button>
+
+    <button class="hoverable" onclick="tellJoke()">Tell Me A Joke!</button>
+
+    <script>
+      function sayHello() {
+        alert("Hello from JavaScript!");
+      }
+
+      function tellJoke() {
+        alert("Tell yourself a joke");
+      }
+    </script>
+  </body>
+</html>
