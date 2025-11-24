@@ -1,0 +1,39 @@
+<p>Component: parent --SUCCESS </p>
+
+<p>These are my children:</p>
+
+<!-- *ngFor - dynamic rendering of an element -->
+<div>
+    <!-- <p *ngFor = "let num of arr">Hello, I'm child #{{num}}.</p> -->
+    <!-- Using an actual child component -->
+    
+    <app-child *ngFor="let num of arr" [index]="num"></app-child>
+
+</div>
+
+<!-- DATA BINDING -->
+<!-- First type: {{{STRING INTERPOLATION}} - taking a value defined in .ts and using it in our html; dynamic -->
+<div>
+    <h3>I have {{arr.length}} children.</h3>
+    
+    <!-- *ngIf - conditional rendering of an element -->
+    <p *ngIf = "arr.length > 1">I have multiple children (for some reason).</p>
+</div>
+
+<!-- Second type: (EVENT BINDING) - attaching a function in .ts to some event in html -->
+<div>
+    <button (click)="showSurprise()">Click me!</button>
+</div>
+<br>
+<!-- Third type: [PROPERTY BINDING] - value of variable in .ts is used to get value of an element's attributes -->
+<div>
+    <p [hidden]="hideElement">This is a secret, shhhh!</p>
+</div>
+
+<!-- Fourth type: [(Two-Way Binding)] - can take user input and save it in a variable in the .ts -->
+<div>
+    <h2>Who is 'Who Are You'?</h2>
+    <input type="text" [(ngModel)]="nameInput">
+
+    <p *ngIf="nameInput">Oh my god, it was {{nameInput}} all along!</p>
+</div>
