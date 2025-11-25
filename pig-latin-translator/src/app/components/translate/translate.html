@@ -1,1 +1,12 @@
-<p>translate works!</p>
+<div class="in">
+    <h2>English to Pig Latin Translator</h2>
+
+    <label for="inputText">English:</label>
+    <textarea id="inputText" rows="5" [(ngModel)]="englishText"></textarea>
+
+    <button (click)="translate()">Translate</button>
+
+    <div *ngIf="pigLatinText">
+        {{pigLatinText}}
+    </div>
+</div>

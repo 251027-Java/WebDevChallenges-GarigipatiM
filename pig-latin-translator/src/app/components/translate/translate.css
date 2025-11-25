@@ -1,0 +1,24 @@
+.in {
+    border: 1px solid black;
+    max-width: 50%;
+    margin: auto;
+    margin-top: 5%;
+    padding: 5%;
+    display:flex;
+    flex-direction: column;
+}
+
+h2 {
+    text-align: center;
+}
+
+button {
+    padding: 2%;
+    background-color:teal;
+    border: 1px solid white;
+    border-radius: 25px;
+    margin:auto;
+    margin-top: 5%;
+    width: 25%;
+    color:white;
+}
