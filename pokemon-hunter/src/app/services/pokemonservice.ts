@@ -7,7 +7,8 @@ import { Pokemoninterface } from '../interfaces/pokemoninterface';
   providedIn: 'root',
 })
 export class Pokemonservice {
-  //TODO: Array of caught pokemon
+  // Array to hold caught pokemon
+  caughtPokemon:Pokemoninterface[] = []
   
   // Inject HTTPClient to make HTTP Requests
   constructor(private http:HttpClient) {}

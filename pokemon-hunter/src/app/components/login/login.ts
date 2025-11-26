@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
+import { Auth } from '../../services/auth';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +15,15 @@ export class Login {
   password:string = ""
 
   // Dependency Inject Router
-  constructor(private router:Router) {}
+  constructor(private router:Router, private auth:Auth) {}
 
   // Hardcoded login
   login() {
     if(this.username === 'user' && this.password === 'password') {
-      // Switch urls using Router
+      
+      this.auth.authenticateUser();
       this.router.navigateByUrl("/dashboard")
+
     } else {
       alert("Username or password are incorrect!")
     }

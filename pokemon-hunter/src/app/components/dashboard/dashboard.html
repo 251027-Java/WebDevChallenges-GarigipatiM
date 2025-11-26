@@ -1,8 +1,13 @@
 <div class="container-fluid">
 
-    <h1>Welcome, [username]</h1>
-    <h3 class="mt-4 border-bottom">You have [number] Pokemon.</h3>
+    <h1>Welcome, User!</h1>
+    <h3 class="mt-4 border-bottom">You have {{this.pokemonService.caughtPokemon.length}} Pokemon.</h3>
 
-    <p>[your pokemon here]</p>
+    <div class="d-flex flex-wrap">
+        <div *ngFor="let pokemon of pokemonService.caughtPokemon">
+        <img src="{{pokemon.sprite}}" alt="" width="150px">
+        <p style="text-align: center;">{{pokemon.name | titlecase}}</p>
+    </div>
+    </div>
 
 </div>
